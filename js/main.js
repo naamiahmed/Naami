@@ -13,7 +13,7 @@
     parallaxElements: true,
     horizontalScrolling: false,
     hideDistantElements: false,
-    scrollProperty: 'scroll'
+    //scrollProperty: 'scroll'
   });
 
 
