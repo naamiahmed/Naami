@@ -134,7 +134,7 @@
 	});
 
 	// scroll
-	/*var scrollWindow = function() {
+	var scrollWindow = function() {
 		$(window).scroll(function(){
 			var $w = $(this),
 					st = $w.scrollTop(),
@@ -171,7 +171,7 @@
 			}
 		});
 	};
-	scrollWindow();*/
+	scrollWindow();
 
 	
 
