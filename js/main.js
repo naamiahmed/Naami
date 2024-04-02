@@ -3,54 +3,64 @@
  	easing: 'slide'
  });
 
- (function($) {
-    "use strict";
+(function($) {
 
-    $(window).stellar({
-        responsive: true,
-        parallaxBackgrounds: true,
-        parallaxElements: true,
-        horizontalScrolling: false,
-        hideDistantElements: false,
-    });
+	"use strict";
 
-    var fullHeight = function() {
-        $('.js-fullheight').css('height', $(window).height());
-        $(window).resize(function(){
-            $('.js-fullheight').css('height', $(window).height());
-        });
-    };
-    fullHeight();
+	$(window).stellar({
+    responsive: true,
+    parallaxBackgrounds: true,
+    parallaxElements: true,
+    horizontalScrolling: false,
+    hideDistantElements: false,
+    scrollProperty: 'scroll'
+  });
 
-    // Scroll to section on menu click
-    var scrollToSection = function() {
-        $(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
-            event.preventDefault();
-            var target = $($.attr(this, 'href'));
-            $('html, body').animate({
-                scrollTop: target.offset().top - 70
-            }, 500);
-        });
-    };
-    scrollToSection();
 
-    // Smooth scroll for burger menu
-    var burgerMenu = function() {
-        $('body').on('click', '.js-fh5co-nav-toggle', function(event){
-            event.preventDefault();
-            $('#ftco-nav').toggleClass('show');
-        });
-    };
-    burgerMenu();
+	var fullHeight = function() {
 
-    // Remove scrolling effects on mobile
-    var removeScrollingEffects = function() {
-        if ($(window).width() < 768) {
-            $(window).stellar('destroy');
-            $(window).off('scroll');
-        }
-    };
-    removeScrollingEffects();
+		$('.js-fullheight').css('height', $(window).height());
+		$(window).resize(function(){
+			$('.js-fullheight').css('height', $(window).height());
+		});
+
+	};
+	fullHeight();
+
+	// loader
+	var loader = function() {
+		setTimeout(function() { 
+			if($('#ftco-loader').length > 0) {
+				$('#ftco-loader').removeClass('show');
+			}
+		}, 1);
+	};
+	loader();
+
+	// Scrollax
+   $.Scrollax();
+
+
+
+   // Burger Menu
+	var burgerMenu = function() {
+
+		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+
+			event.preventDefault();
+
+			if ( $('#ftco-nav').is(':visible') ) {
+				$(this).removeClass('active');
+			} else {
+				$(this).addClass('active');	
+			}
+
+			
+			
+		});
+
+	};
+	burgerMenu();
 
 
 	var onePageClick = function() {
@@ -124,7 +134,7 @@
 	});
 
 	// scroll
-	var scrollWindow = function() {
+	/*var scrollWindow = function() {
 		$(window).scroll(function(){
 			var $w = $(this),
 					st = $w.scrollTop(),
@@ -161,7 +171,7 @@
 			}
 		});
 	};
-	scrollWindow();
+	scrollWindow();*/
 
 	
 
