@@ -66,11 +66,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 }
 
 /* Add media queries for better responsiveness on smaller screens */
-@media (max-width: 767px) {
-    body {
-        overflow-y: auto; /* Adjust as needed */
-    }
-}
+
 
 /* Add more media queries and adjust styles for smaller screens if necessary */
 
